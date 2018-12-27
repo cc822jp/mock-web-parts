@@ -5,7 +5,7 @@ const routerBase =
   process.env.DEPLOY_ENV === 'GH_PAGES'
     ? {
         router: {
-          base: '/mock-web-parts/dist/'
+          base: '/mock-web-parts/'
         }
       }
     : {}
