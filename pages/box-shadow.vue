@@ -1,14 +1,14 @@
 <template>
   <div class="container">
-    <h1>drop-shadow test</h1>
+    <h1>box-shadow test</h1>
 
     <h2>(1) static</h2>
 
-    <Logo :is-ds-shadow="true"/>
+    <Logo :is-bs-shadow="true"/>
 
     <h2>(2) animation</h2>
 
-    <Logo :is-ds-animation="true"/>
+    <Logo :is-bs-animation="true"/>
 
     <h2>(3) switch</h2>
 
@@ -19,8 +19,8 @@
         class="item"
         @click="switchItem(this, i)">
         <Logo
-          :is-ds-shadow="item"
-          :is-ds-transition="true"/>
+          :is-bs-shadow="item"
+          :is-bs-transition="true"/>
       </div>
     </div>
   </div>

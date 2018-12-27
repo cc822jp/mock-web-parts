@@ -2,10 +2,12 @@
   <figure class="logo">
     <img
       :class="{
-        isShadow: isShadow,
-        isAnimation: isAnimation,
-        isTransition: isTransition,
-        isBoxShadow: isBoxShadow,
+        isDsShadow: isDsShadow,
+        isBsShadow: isBsShadow,
+        isDsAnimation: isDsAnimation,
+        isBsAnimation: isBsAnimation,
+        isDsTransition: isDsTransition,
+        isBsTransition: isBsTransition,
       }"
       src="../../assets/logo.png"
     >
@@ -16,19 +18,27 @@
 export default {
   name: 'Logo',
   props: {
-    isBoxShadow: {
+    isDsShadow: {
       type: Boolean,
       default: false
     },
-    isShadow: {
+    isBsShadow: {
       type: Boolean,
       default: false
     },
-    isAnimation: {
+    isDsAnimation: {
       type: Boolean,
       default: false
     },
-    isTransition: {
+    isBsAnimation: {
+      type: Boolean,
+      default: false
+    },
+    isDsTransition: {
+      type: Boolean,
+      default: false
+    },
+    isBsTransition: {
       type: Boolean,
       default: false
     }
@@ -47,20 +57,28 @@ img {
   max-width: 100%;
 }
 
-.isBoxShadow {
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
-}
-
-.isShadow {
+.isDsShadow {
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
 }
 
-.isAnimation {
+.isBsShadow {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.isDsAnimation {
   animation: drop-shadow-animation 1.5s linear 0s infinite alternate;
 }
 
-.isTransition {
+.isBsAnimation {
+  animation: box-shadow-animation 1.5s linear 0s infinite alternate;
+}
+
+.isDsTransition {
   transition: filter 0.5s ease;
+}
+
+.isBsTransition {
+  transition: box-shadow 0.5s ease;
 }
 
 @keyframes drop-shadow-animation {
@@ -69,6 +87,15 @@ img {
   }
   to {
     filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.5));
+  }
+}
+
+@keyframes box-shadow-animation {
+  from {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.5);
+  }
+  to {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
   }
 }
 </style>
