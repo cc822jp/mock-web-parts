@@ -5,7 +5,7 @@ const routerBase =
   process.env.DEPLOY_ENV === 'GH_PAGES'
     ? {
         router: {
-          base: '/<repository-name>/'
+          base: '/mock-web-parts/dist/'
         }
       }
     : {}
@@ -16,9 +16,7 @@ module.exports = {
   /*
    ** router
    */
-  router: {
-    base: '/mock-web-parts/'
-  },
+  ...routerBase,
 
   /*
   ** Headers of the page
